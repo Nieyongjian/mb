@@ -10,45 +10,34 @@ define("APP_SECRET", '0b00d91cf8f37b0b132e1eb256c9348f');
  * 两个小时以外获取token值就重新获取和存储。
  */
 function token(){
-    if(exists_file()){
-        if(checkout_token()){
-            $token = file_get_contents('token.txt');
-        }else{
-            //删除token.txt
-            unlink('token.txt');
-            //获取新的token
-            $token = get_token();
-            file_put_contents('token.txt', $token);
-        }
+    $redis = redis_conn();
+    $result = $redis->ttl('access_token');
+    if($result == -2){
+        //已经过期
+        //重新获取
+         $token = get_token();
+         $redis->set('access_token',$token);
+         $redis->expire('access_token',7200);
+        
     }else{
-        $token = get_token();
-        file_put_contents('token.txt', $token);
+        //没有过期
+        $token = $redis->get('access_token');
+       
     }
+    $redis->close();
     return $token;
 }
 
-//echo token();
-
-//判断存储token.txt文件是否存在
-function exists_file(){
-    if(file_exists('token.txt')){
-        return true;
-    }else{
-        return false;
-    }
+function redis_conn(){
+    $ip = "127.0.0.1";
+    $port = 6379;
+    $redis = new Redis();
+    $redis->pconnect($ip, $port, 1);
+    return $redis;
 }
 
-function checkout_token(){
-    //获取当前时间戳
-    $curr_time = time();
-    //获取到token.txt文件的创建时间
-    $ctime = filectime('token.txt');
-    if(($curr_time-$ctime)>=7000){
-        return false;
-    }else{
-        return true;
-    }
-}
+
+
 //从微信接口中获取到access_token
 function get_token()
 {
