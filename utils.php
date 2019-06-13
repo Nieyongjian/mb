@@ -9,8 +9,8 @@
 
 class Utils{
 	//公众号的信息
-	const APPID= 'wx5438b726b6212ba3';
-	const APP_SECRET = '8a0d11fa1dd3d866e2d855385321a321';
+	const APPID= 'wx8c779eed17997e6d';
+	const APP_SECRET = '0b00d91cf8f37b0b132e1eb256c9348f';
 	//将时间戳转化为普通格式
 	function convert_time($time){
 		return date("Y年m月d日H:i:s",$time);
