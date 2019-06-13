@@ -1,0 +1,166 @@
+@import "globe";
+header{
+  position: relative;
+  top:0;
+  left:0;
+  a {
+    width: 50px;
+    height: 35px;
+    position: absolute;
+    top: 0;
+    line-height: 35px;
+    text-align: center;
+    &.ui-link{
+      color: #fff !important;
+    }
+    &.back {
+      left: 0;
+      span {
+        color: #fff;
+        font-size: 20px;
+        &.glyphicon{
+          color: #fff !important;
+        }
+      }
+    }
+  }
+  h3 {
+    width: 100%;
+    height: 35px;
+    line-height: 35px;
+    background: #07b4d2;
+    color: white;
+    font-size: 20px;
+    font-weight: normal;
+    text-align: center;
+  }
+}
+.ui-link{
+  color: #646769 !important;
+}
+*{
+  margin: 0;
+  padding: 0;
+}
+a{
+  text-decoration: none;
+  color: #ffffff;
+}
+
+div#wrap{
+  width: 300px;
+  height: 400px;
+  border: 2px solid #00bafa;
+  /*border-width: 2px;*/
+  /*border-style: solid;*/
+  /*border-color: #00bafa;*/
+  border-radius: 15px;
+  margin: 150px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+div.header{
+  position: absolute;
+  top:-100px;
+  width: 300px;
+  height: 100px;
+  background: url("../img/mm.png") no-repeat;
+}
+div.face{
+  position: absolute;
+  top:200px;
+  width: 500px;
+  height: 100px;
+  background: url("../img/mmm.png") no-repeat;
+  opacity: .5;
+}
+div.inner{
+  z-index: 1;
+  width: 250px;
+  height: 300px;
+}
+input,button{
+  display: block;
+  box-sizing: border-box;     /*从边框开始计算盒子*/
+  width: 100%;
+  margin: 30px auto;
+  padding: 8px 15px;
+  border: 1px solid #cccccc;
+  border-radius: 20px;
+  outline: none;              /*轮廓样式属性 没有 （文本宽被选中时才看到的）*/
+  color: #898989;
+  font-size: 20px;
+}
+
+/*当文本框成为焦点时（点击），设置边框色、阴影*/
+input:focus {
+  border-color: #00bafa;
+  box-shadow: 0 2px 10px 2px rgba(0,186,255,.5);
+}
+
+/*当文本框成为焦点时（点击），占位的文本也变色*/
+input[type="text"]:focus + label:before,input[type="password"]:focus + label:before {
+  color: #00bafa;
+}
+
+/*
+    :valid  CSS 伪类代表任何<input>或<form>其内容元素验证带正确地根据输入的类型设置。
+    这允许容易地使有效的字段采用有助于用户确认其数据格式正确的外观。
+*/
+/*input和label 成为焦点及输入验证，占位符往上偏移和缩小80%*/
+input:focus + label:before , input:valid + label:before{
+  transition-duration: .2s;
+  transform: translate(0, -20px) scale(0.8, 0.8);
+}
+
+/*输入时的文本也变色，字体变大*/
+input:focus{
+  color: #00bafa;
+  font-size: 20px;
+}
+
+/*
+    :invalid  CSS 伪类选择任何<input>或<form>其内容未能元件验证根据输入的属性的设置。
+    这允许您轻松地使无效字段采用有助于用户识别和更正错误的外观。
+*/
+/* 在输入类型前，使用alt这个属性*/
+input[type="text"]:invalid + label[alt]:before,input[type="password"]:invalid + label[alt]:before {
+  content: attr(alt);
+}
+
+input+ label{
+  display: block;
+  pointer-events: none;  /*使他不是鼠标事件的目标，如有其它值，则鼠标事件可能会定位到其后代元素*/
+  margin-top: -60px;    /*用上外边距把文本定位在框内*/
+}
+
+input + label:before {
+  content: attr(placeholder);
+  display: inline-block;
+  margin: 0 18px;
+  color: #777;
+  transition: 0.2s ease-out;
+  background-image: linear-gradient( #ffffff, #ffffff);
+  background-size: 100% 80%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+
+
+
+.inner>button{
+  width: 80%;
+  margin: 80px auto;
+  background-color: #00bafa;
+}
+button:active{
+  background-color: #009ed4;
+  border: 1px solid #00bafa;
+  text-shadow: #481a54 1px 1px 2px;
+}
+
+
+

@@ -1,0 +1,180 @@
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+dl,
+dd,
+ul,
+ol,
+form,
+input,
+textarea,
+th,
+td,
+select {
+  margin: 0;
+  padding: 0;
+}
+em {
+  font-style: normal;
+}
+li {
+  list-style: none;
+}
+a,
+a:visited,
+a:focus {
+  text-decoration: none;
+}
+img {
+  border: none;
+  vertical-align: top;
+}
+table {
+  border-collapse: collapse;
+}
+input,
+textarea {
+  outline: none;
+}
+textarea {
+  resize: none;
+  overflow: auto;
+}
+body {
+  font-family: "微软雅黑";
+}
+body {
+  width: 100%;
+  background-color: #f1f1f1;
+}
+.header {
+  width: 100%;
+  background: url("../img/bg.png") no-repeat;
+  background-size: 100%;
+}
+.header .info {
+  text-align: center;
+  height: 7.5rem;
+  background: url("../img/ingoBg.png");
+  background-size: 100%;
+  padding-top: 1.26rem;
+}
+.header .info .headerImg {
+  width: 3.6rem;
+  height: 3.6rem;
+  border: 0.06rem solid #fff;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto 0.26rem;
+}
+.header .info .headerImg img {
+  width: 100%;
+  height: 100%;
+}
+.header .info .userName {
+  height: 1.16rem;
+  text-align: center;
+}
+.header .info .userName span {
+  display: inline-block;
+  line-height: 1.16rem;
+  vertical-align: middle;
+  font-size: 0.68rem;
+  color: #fff;
+}
+.header .info .userName img {
+  width: 2.14rem;
+  height: 0.76rem;
+  display: inline-block;
+  vertical-align: middle;
+}
+.header .info .regTime {
+  height: 0.96rem;
+  line-height: 0.96rem;
+  font-size: 0.44rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+.title {
+  height: 2rem;
+  line-height: 2rem;
+  font-weight: normal;
+  background-color: #fbfcff;
+  font-size: 0.64rem;
+  padding-left: 1rem;
+  color: #9ca9b4;
+}
+.title:nth-of-type(2) {
+  margin-top: 1rem;
+}
+.menu {
+  margin-bottom: 0;
+  border-top: 0.02rem solid #ccd9e6;
+}
+.menu,
+.menu2 {
+  height: 3.2rem;
+  background: #fff;
+  display: flex;
+  text-align: center;
+  border-bottom: 0.02rem solid #ccd9e6;
+}
+.menu .item,
+.menu2 .item {
+  height: 3.2rem;
+  flex: 1;
+  box-sizing: border-box;
+  border-right: 0.02rem solid #ccd9e6;
+}
+.menu .item:first-child,
+.menu2 .item:first-child {
+  border-left: 0.02rem solid #ccd9e6;
+}
+.menu .item i,
+.menu2 .item i {
+  width: 1.2rem;
+  height: 1.2rem;
+  display: inline-block;
+  background-color: #fff;
+  margin-top: 0.4rem;
+  font-size: 1.3rem;
+}
+.menu .item span,
+.menu2 .item span {
+  display: block;
+  line-height: 1.14rem;
+  width: 100%;
+  color: #909291;
+}
+.safe {
+  height: 2.6rem;
+  padding: 2px 0;
+  background: #fff;
+  display: flex;
+  text-align: center;
+}
+.safe .item {
+  height: 2.6rem;
+  flex: 1;
+}
+.safe .item:first-child {
+  margin-right: 2px;
+}
+.safe .item i {
+  width: 1.2rem;
+  height: 1.2rem;
+  display: inline-block;
+  background-color: #fff;
+  margin-top: 0.8rem;
+  font-size: 1.3rem;
+}
+.safe .item span {
+  color: #909291;
+  display: block;
+  line-height: 1.14rem;
+  width: 100%;
+}
+/*# sourceMappingURL=case.css.map */

@@ -1,0 +1,87 @@
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+dl,
+dd,
+ul,
+ol,
+form,
+input,
+textarea,
+th,
+td,
+select {
+  margin: 0;
+  padding: 0;
+}
+em {
+  font-style: normal;
+}
+li {
+  list-style: none;
+}
+a,
+a:visited,
+a:focus {
+  text-decoration: none;
+}
+img {
+  border: none;
+  vertical-align: top;
+}
+table {
+  border-collapse: collapse;
+}
+input,
+textarea {
+  outline: none;
+}
+textarea {
+  resize: none;
+  overflow: auto;
+}
+body {
+  font-family: "微软雅黑";
+}
+.header {
+  height: 2.06rem;
+  line-height: 2.06rem;
+  background-color: #ef3239;
+  position: relative;
+  text-align: center;
+  vertical-align: middle;
+  border-bottom: 0.02rem solid #5B777D;
+  box-sizing: border-box;
+}
+.header a {
+  width: 2.56rem;
+  height: 2.06rem;
+  position: absolute;
+  top: 0;
+  line-height: 2.06rem;
+  text-align: center;
+}
+.header a.task {
+  left: 0;
+}
+.header a.refresh {
+  right: 0;
+}
+.header span {
+  color: #fff;
+  font-size: 0.74rem;
+}
+.header h1 {
+  font-size: 0.74rem;
+  text-align: center;
+  color: #fff;
+  line-height: 2.06rem;
+}
+.header h1 span {
+  font-size: 0.6rem;
+}
+/*# sourceMappingURL=form.css.map */
