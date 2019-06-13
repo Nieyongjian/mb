@@ -288,7 +288,7 @@ if($content){
             //将用户注册信息录入到数据库中
             $utils =  new Utils;
             $dbconn = $utils->get_db_conn();
-            $sql_query = "INSERT INTO `user` VALUES(:openid,:sid,:sno,:sname,:ssex,:snj,:sxs,:szy,:sbj)";
+            $sql_query = "INSERT INTO `user` set openid=:openid,sid=:sid,sno=:sno,name=:sname,ssex=:ssex";
             $prepare_conn = $dbconn->prepare($sql_query);
             if($prepare_conn->execute(array(
                 ':openid'=>$openid,
@@ -296,10 +296,10 @@ if($content){
                 ':sno'=>$sno,
                 ':sname'=>$name,
                 ':ssex'=>$sex,
-                ':snj'=>$nj,
-                ':sxs'=>$xs,
-                ':szy'=>$zy,
-                ':sbj'=>$bj
+                // ':snj'=>$nj,
+                // ':sxs'=>$xs,
+                // ':szy'=>$zy,
+                // ':sbj'=>$bj
                 ))){
                 echo "<!-- 模态框 -->
                 <div class='modal fade show'  style='display: block;top:30%'>
