@@ -269,8 +269,8 @@ if($content){
         echo "学号或者密码有误";
         exit;
     }
-     var_dump($info);
-     exit;
+    // var_dump($info);
+    // exit;
     //判断用户提交的身份证信息与爬取到的信息是否一致
     if($sid==$pid){
         // echo "ok";

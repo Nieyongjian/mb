@@ -23,12 +23,12 @@ class Utils{
 	//通过此方法来获取与云数据库的连接
 	function get_db_conn(){
 		$dbname = 'mb';
-		$host = '47.100.102.183';
-		$port = 3306;
+		$host = 'localhost';
+	//	$port = 3306;
 		$user = 'root';//用户AK
 		$pwd = 'root';//用户SK
 		try{
-		    $dbconn = new PDO("mysql:host=$host:$port;dbname=$dbname",$user,$pwd);
+		    $dbconn = new PDO("mysql:host=$host;dbname=$dbname",$user,$pwd);
 		} catch(PDOException $e){
 		    echo "Connection error message:".$e->getMessage();
 		}
