@@ -32,6 +32,7 @@ class Utils{
 		} catch(PDOException $e){
 		    echo "Connection error message:".$e->getMessage();
 		}
+		mysql_query('set names utf8', $dbconn);
 		return $dbconn;
 		
 	}
