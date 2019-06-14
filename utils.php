@@ -28,11 +28,11 @@ class Utils{
 		$user = 'root';//用户AK
 		$pwd = 'root';//用户SK
 		try{
-		    $dbconn = new PDO("mysql:host=$host;dbname=$dbname",$user,$pwd);
+		    $dbconn = new PDO("mysql:host=$host;dbname=$dbname",$user,$pwd,array(PDO::MYSQL_ATTR_INIT_COMMAND => "set names utf8"));
 		} catch(PDOException $e){
 		    echo "Connection error message:".$e->getMessage();
 		}
-		mysql_query('set names utf8', $dbconn);
+		//mysql_query('set names utf8', $dbconn);
 		return $dbconn;
 		
 	}
