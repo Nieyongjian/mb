@@ -145,7 +145,6 @@ body {
 .menu .item span,
 .menu2 .item span {
   display: block;
-  line-height: 1.14rem;
   width: 100%;
   color: #909291;
 }
