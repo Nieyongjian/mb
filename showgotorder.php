@@ -36,7 +36,7 @@ if(isset($_SESSION['openid'])){
     exit;
 }
 
-$sql_query = "select * from `order` where sopenid='".$openid."' and oid ='".$oid."'";
+$sql_query = "select * from `orders` where sopenid='".$openid."' and oid ='".$oid."'";
 $result = $dbconn->query($sql_query);
 foreach ($result as $row) {
     // $oid = $row['oid'];

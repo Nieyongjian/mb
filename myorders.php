@@ -66,7 +66,7 @@ if(!isset($openid)){
     echo "未获取到openid";
     exit;
 }
-$sql_query = "select * from `order` where openid='".$openid."' and sopenid is null";
+$sql_query = "select * from `orders` where openid='".$openid."' and sopenid is null";
 $result = $dbconn->query($sql_query);
 foreach ($result as $row) {
     $oid = $row['oid'];

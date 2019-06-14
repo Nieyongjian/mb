@@ -64,7 +64,7 @@ if(!isset($openid)){
 $utils =  new Utils;
 $dbconn = $utils->get_db_conn();
 //构造插入语句
-$sql_query = "INSERT INTO `order`(openid,name,number,express,apartment,dormitory,message,extra,fee,releasetime) VALUES(:openid,:name,:number,:express,:apartment,:dormitory,:message,:extra,:fee,:releasetime)";
+$sql_query = "INSERT INTO `orders`(openid,name,number,express,apartment,dormitory,message,extra,fee,releasetime) VALUES(:openid,:name,:number,:express,:apartment,:dormitory,:message,:extra,:fee,:releasetime)";
 $prepare_conn = $dbconn->prepare($sql_query);
 if($prepare_conn->execute(array(
     ':openid'=>$openid,

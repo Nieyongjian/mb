@@ -62,7 +62,7 @@ $dbconn = $utils->get_db_conn();
 // if($dbconn->exec($sql_query)){
 //  echo "a new record has been inserted.";
 // }
-$sql_query = "UPDATE `order` SET name=:name,number=:number,express=:express,apartment=:apartment,dormitory=:dormitory,message=:message,extra=:extra,fee=:fee WHERE oid=:oid and openid=:openid";
+$sql_query = "UPDATE `orders` SET name=:name,number=:number,express=:express,apartment=:apartment,dormitory=:dormitory,message=:message,extra=:extra,fee=:fee WHERE oid=:oid and openid=:openid";
 $prepare_conn = $dbconn->prepare($sql_query);
 if($prepare_conn->execute(array(
     ':name'=>$name,

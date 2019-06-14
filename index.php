@@ -192,7 +192,7 @@ if($code){
 //获取数据连接
 $dbconn = $utils->get_db_conn();
 //构造sql语句查询开放订单
-$sql_query = 'select * from `order` where sopenid is null';
+$sql_query = 'select * from `orders` where sopenid is null';
 $result = $dbconn->query($sql_query);
 foreach ($result as $row) {
     $oid = $row['oid'];

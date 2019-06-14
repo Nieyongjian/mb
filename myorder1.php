@@ -59,7 +59,7 @@ $dbconn = $utils->get_db_conn();
 session_start();
 $openid = $_SESSION['openid'];
 
-$sql_query = "select * from `order` where openid='".$openid."' and sopenid is not null and receivetime is null";
+$sql_query = "select * from `orders` where openid='".$openid."' and sopenid is not null and receivetime is null";
 $result = $dbconn->query($sql_query);
 foreach ($result as $row) {
     $oid = $row['oid'];

@@ -41,7 +41,7 @@ if(isset($openid) && isset($oid)){
 	$result = $dbconn->query($sql_query);
 	$rownum = $result->rowCount();
 	if($rownum == 1 ){
-		$sql_query = "update `order` set sopenid = '".$openid."' , gottime='".time()."' where oid='".$oid."' and sopenid is null";
+		$sql_query = "update `orders` set sopenid = '".$openid."' , gottime='".time()."' where oid='".$oid."' and sopenid is null";
 		if($dbconn->exec($sql_query)){
 			echo "<div class='modal fade show'  style='display: block;top:30%'>
 				    <div class='modal-dialog'>
@@ -68,7 +68,7 @@ if(isset($openid) && isset($oid)){
 					$sno = $row['sno'];
 				}
 				//通过订单号获取订单发送者的信息
-				$sql_query = "select * from `order` where oid=".$oid;
+				$sql_query = "select * from `orders` where oid=".$oid;
 				$result = $dbconn->query($sql_query);
 				foreach ($result as $row) {
 					$touser = $row['openid'];

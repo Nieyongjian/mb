@@ -40,14 +40,14 @@ if(isset($_GET['oid'])){
     exit;
 }
 
-$sql_query = "UPDATE `order` SET receivetime='".time()."' where  gottime is not null and sopenid is not null and oid = $oid";
+$sql_query = "UPDATE `orders` SET receivetime='".time()."' where  gottime is not null and sopenid is not null and oid = $oid";
 if($dbconn->exec($sql_query)){
     
 }else{
     echo "订单验收失败";
     exit;
 }
-$sql_query = "select * from `order` where oid = $oid and gottime is not null";
+$sql_query = "select * from `orders` where oid = $oid and gottime is not null";
 $result = $dbconn->query($sql_query);
 foreach ($result as $row) {
     $fee =  $row['fee'];

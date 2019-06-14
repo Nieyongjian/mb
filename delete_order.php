@@ -38,7 +38,7 @@ if(isset($_GET['oid'])){
     echo "未得到oid";
     exit;
 }
-$sql_query = "SELECT * FROM `order` WHERE oid='".$oid."'";
+$sql_query = "SELECT * FROM `orders` WHERE oid='".$oid."'";
 // echo "$sql_query";
 $result = $dbconn->query($sql_query);
 //获取订单的发布时间
@@ -49,7 +49,7 @@ foreach ($result as $row) {
 if($releasetime){
     //当期时间减去订单发布的时间大于15分钟，便可以直接删除
     if(($time = time()-$releasetime)>900){
-        $sql_query = "DELETE FROM `order` where oid='".$oid."' and openid='".$openid."' and sopenid is null";
+        $sql_query = "DELETE FROM `orders` where oid='".$oid."' and openid='".$openid."' and sopenid is null";
         if($dbconn->exec($sql_query)){
             echo "<!-- 模态框 -->
             <div class='modal fade show'  style='display: block;top:30%'>
