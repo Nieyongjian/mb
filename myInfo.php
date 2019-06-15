@@ -13,7 +13,7 @@
     <link href="bs/bootstrap.css" rel="stylesheet">
     <link href="css/my.css" rel="stylesheet" type="text/css"/>
     <style type="text/css">
-    body:{margin-bottom: 3.2rem}
+
     a:link,
     a:hover,
     a:active,
@@ -44,7 +44,7 @@
     </script>
 
 </head>
-<body>
+<body style="margin-bottom: 3.2rem">
 <div id="preloader">
     <div id="status">
         <p class="center-text"><span>拼命加载中···</span></p>
