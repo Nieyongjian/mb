@@ -213,7 +213,7 @@ foreach ($result as $row) {
     $releasetime = $utils->convert_time($releasetime);
     $extra = $row['extra'];
     if(!$extra){
-        $extra = "无额外要求"
+        $extra = "无额外要求";
     }
     $fee = $row['fee'];
     if($dormitory==''){
