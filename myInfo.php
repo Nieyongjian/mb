@@ -97,12 +97,14 @@
                         <h2>
                             总资产(元) 
                         </h2>
-                        <h3><?php 
-                            if(isset($total))
-                                echo "$total";
-                            else
-                                echo "0.0";
-                        ?></h3>
+                        <h3>
+                        <?php 
+                        if($total)
+                            echo "$total";
+                        else
+                            echo "0.0";
+                        ?>
+                        </h3>
                     </div>
                    
                 </div>
