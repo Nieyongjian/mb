@@ -69,6 +69,7 @@ $(function(){
 <?
 <?php 
 include 'utils.php';
+session_start();
 $utils =  new Utils;
 $dbconn = $utils->get_db_conn();
 $total = $_GET['total'];
