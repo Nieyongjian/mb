@@ -34,7 +34,7 @@ $(function(){
 				}else{
 					$(".mm_box li").eq(i-1).addClass("mmdd");
 					setTimeout(function(){
-					location.href="tixiansuccess.php?total=<?echo $_GET['total']?>";
+					location.href="tixiansuccess.php?total=<?php echo $_GET['total']?>";
 					},500);
 					//window.document.location="cg.html"
 			 }
