@@ -212,6 +212,9 @@ foreach ($result as $row) {
     $releasetime = $row['releasetime'];
     $releasetime = $utils->convert_time($releasetime);
     $extra = $row['extra'];
+    if(!$extra){
+        $extra = "无额外要求"
+    }
     $fee = $row['fee'];
     if($dormitory==''){
         echo "<section class='container border'>
