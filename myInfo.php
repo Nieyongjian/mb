@@ -22,7 +22,13 @@
         });
 
     </script>
-
+    <script>
+        (function(){
+            var html=document.documentElement;
+            var hWidth=html.getBoundingClientRect().width;
+            html.style.fontSize=hWidth/15+"px ";//1rem=50px
+        })();
+    </script>
 
 </head>
 <body>
