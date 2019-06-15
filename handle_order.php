@@ -185,7 +185,7 @@ if($prepare_conn->execute(array(
                     }else{
                         $(".mm_box li").eq(i-1).addClass("mmdd");
                         setTimeout(function(){
-                        location.href="zhifusuccess.php?fee=$fee";
+                        location.href="zhifusuccess.php?fee=<?php echo $fee ?>";
                         },500);
                         //window.document.location="cg.html"
                  }
