@@ -232,14 +232,14 @@ a {
 }
 
 .aui-flex-box-hd {
-    width: 60px;
-    height: 60px;
+    width: 80px;
+    height: 80px;
     margin-right: 15px;
 }
 
 .aui-flex-box-hd img {
-    width: 60px;
-    height: 60px;
+    width: 80px;
+    height: 80px;
     display: block;
     border: 1px solid #e9e9e9;
     border-radius: 100%;
@@ -257,7 +257,7 @@ a {
     color: #ef4352;
     padding-right: 20px;
     position: relative;
-    font-size: 0.8rem;
+    font-size: 1.3rem;
 }
 
 .aui-flex-box-fr:after {
@@ -297,14 +297,14 @@ a {
 .aui-flex-box-bd h2 {
     position: relative;
     width: 104px;
-    font-size: 0.9rem;
+    font-size: 0.6rem;
     font-weight: normal;
     color: #808080;
     padding-bottom: 10px;
 }
 
 .aui-flex-box-bd h3 {
-    font-size: 2rem;
+    font-size: 1.5rem;
     color: #333;
 }
 
@@ -372,13 +372,13 @@ a {
 }
 
 .aui-icon-box .aui-flex-box-hd {
-    width: 18px;
-    height: 18px;
+    width: 28px;
+    height: 28px;
 }
 
 .aui-icon-box .aui-flex-box-hd img {
-    width: 18px;
-    height: 18px;
+    width: 28px;
+    height: 28px;
     display: block;
     border: none;
     border-radius: inherit;

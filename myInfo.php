@@ -37,9 +37,7 @@
         <p class="center-text"><span>拼命加载中···</span></p>
     </div>
 </div>
-<div class="d-flex fixed-top">
-    <h3>个人中心</h3>
-</div>
+
 
 
 <?php
@@ -80,7 +78,7 @@ $subscribe_time = $utils->convert_time_nyr($subscribe_time);
                         </div>
                         <div class="aui-flex-box-bd">发布订单
                         </div>
-                        <div class="aui-flex-box-fr"></div>
+                        
                     </a>
                     <div class="divHeight"></div>
                     
