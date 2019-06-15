@@ -65,7 +65,7 @@ class Utils{
 	}
 
 	function get_openid($code){
-		$url = "https://api.weixin.qq.com/sns/oauth2/access_token?appid=".self::APPID."&secret=".self::APP_SECRET."&code=".$code."&grant_type=authorization_code ";
+		$url = "https://api.weixin.qq.com/sns/oauth2/access_token?appid=".self::APPID."&secret=".self::APP_SECRET."&code=".$code."&grant_type=authorization_code";
 		$output = $this->get($url);
 		return $output;
 	}

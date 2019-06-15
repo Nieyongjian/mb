@@ -115,7 +115,7 @@ session_start();
 $access_token = token();
 //微信端通过以snsapi_base为scope发起的网页授权获取到code，然后用code换取openid
 if($code){
-    if(!isset($_SESSION['time'])){
+    if(!isset($_SESSION['mbtime'])){
         //通过user_info方式获取用户信息
             // $output = $utils->get_access_token($code);
             // $data = json_decode($output,true);
@@ -146,12 +146,12 @@ if($code){
             $subscribe_time = $data['subscribe_time'];
             $time = time();
             $_SESSION['openid'] = $openid;
-            $_SESSION['time'] = $time;
+            $_SESSION['mbtime'] = $time;
             $_SESSION['nickname'] = $nickname;
             $_SESSION['headimgurl'] = $headimgurl;
             $_SESSION['subscribe_time'] = $subscribe_time;
     }else{
-        if(($_SESSION['time']+7200)-time()<900){
+        if(($_SESSION['mbtime']+7200)-time()<900){
             //通过user_info方式获取用户信息
             // $output = $utils->get_access_token($code);
             // $data = json_decode($output,true);
@@ -181,7 +181,7 @@ if($code){
             $subscribe_time = $data['subscribe_time'];
             $time = time();
             $_SESSION['openid'] = $openid;
-            $_SESSION['time'] = $time;
+            $_SESSION['mbtime'] = $time;
             $_SESSION['nickname'] = $nickname;
             $_SESSION['headimgurl'] = $headimgurl;
             $_SESSION['subscribe_time'] = $subscribe_time;
