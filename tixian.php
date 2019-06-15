@@ -34,7 +34,7 @@ $(function(){
 				}else{
 					$(".mm_box li").eq(i-1).addClass("mmdd");
 					setTimeout(function(){
-					location.href="tixiansuccess.html";
+					location.href="tixiansuccess.php?total=<?php echo $total;?>";
 					},500);
 					//window.document.location="cg.html"
 			 }
@@ -47,10 +47,7 @@ $(function(){
 				$(".mm_box li").eq(i).removeClass("mmdd");
 				i==0;
 				}
-			//alert(i);
-			
-			
-			 
+			//alert(i); 
 		});
 		
  
@@ -69,9 +66,24 @@ $(function(){
     </div>
   </div>
 </div>
+<?
+<?php 
+include 'utils.php';
+$utils =  new Utils;
+$dbconn = $utils->get_db_conn();
+$total = $_GET['total'];
+if(isset($_SESSION['openid'])){
+    $openid = $_SESSION['openid'];
+}else{
+    echo "openid未获取到";
+    exit;
+}
+$sql_query = "INSERT INTO `bill` VALUES('".$openid."','-".$total."','".time()."')";
+$dbconn->exec($sql_query);
+?>
 <div class="wenx_xx">
   <div class="mz">校园马帮平台</div>
-  <div class="wxzf_price" id='price'>￥11.90</div>
+  <div class="wxzf_price" id='price'>￥<?php echo $total;?></div>
 </div>
 <div class="skf_xinf">
   <div class="all_w"> <span class="bt">收款方</span> <span class="fr">校园马帮</span> </div>
@@ -85,7 +97,7 @@ $(function(){
     <div class="qsrzfmm_bt clear_wl"> <img src="images/xx_03.jpg" class="tx close fl" ><span class="fl">请输入支付密码</span> </div>
     <div class="zfmmxx_shop">
       <div class="mz">校园马帮</div>
-      <div class="wxzf_price">￥11.90</div>
+      <div class="wxzf_price">￥<?php echo $total;?></div>
     </div>
     <a href="#" class="blank_yh"> <img src="images/jftc_07.jpg" class="fl"  ><span class="fl ml5">招商银行信用卡</span> <img src="images/jftc_09.jpg" class="fr"></a>
     <ul class="mm_box">

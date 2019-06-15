@@ -44,7 +44,7 @@
 <div class="cgzf_info">
 <div class="wenx_xx">
   <div class="mz">校园马帮平台</div>
-  <div class="wxzf_price">￥11.90</div>
+  <div class="wxzf_price">￥<?php echo $_GET['total'];?></div>
 </div>
 
 <div class="spxx_shop">

@@ -139,7 +139,12 @@
                         </a>
                     
                     <div class="divHeight"></div>
-                    <a class="aui-flex-box" href="tixian.html">
+                    <a class="aui-flex-box" href="tixian.php?total=<?php 
+                        if($total)
+                            echo "$total";
+                        else
+                            echo "0.0";
+                        ?>">
                             <div class="aui-flex-box-hd">
                                 <img src="images/tx.png" alt="">
                             </div>
