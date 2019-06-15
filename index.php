@@ -151,7 +151,7 @@ if($code){
             $_SESSION['headimgurl'] = $headimgurl;
             $_SESSION['subscribe_time'] = $subscribe_time;
     }else{
-        if(($_SESSION['mbtime']+7200)-time()<900){
+        if((($_SESSION['mbtime']+7000)-time())<0){
             //通过user_info方式获取用户信息
             // $output = $utils->get_access_token($code);
             // $data = json_decode($output,true);
