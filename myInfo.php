@@ -54,13 +54,32 @@
 
 
 <?php
-include "utils.php";
-$utils = new Utils;
-session_start();
-$headimgurl = $_SESSION['headimgurl'];
-$nickname = $_SESSION['nickname'];
-$subscribe_time = $_SESSION['subscribe_time'];
-$subscribe_time = $utils->convert_time_nyr($subscribe_time);
+    include "utils.php";
+    $utils = new Utils;
+    session_start();
+    $headimgurl = $_SESSION['headimgurl'];
+    $nickname = $_SESSION['nickname'];
+    $subscribe_time = $_SESSION['subscribe_time'];
+    $subscribe_time = $utils->convert_time_nyr($subscribe_time);
+    if(isset($_SESSION['openid'])){
+        $openid = $_SESSION['openid'];
+    }else{
+        echo "没有得到openID，请重试";
+        exit;
+    }
+    $dbconn = $utils->get_db_conn();
+    $sql_query = "select * from `bill` where openid='".$openid."'";
+    $result = $dbconn->query($sql_query);
+    $rownum = $result->rowCount();
+    if($rownum>=1){
+        $sql_query = "select openid,sum(amount) total from `bill` where openid = '".$openid."'";
+        $result = $dbconn->query($sql_query);
+        foreach ($result as $row) {
+            $openid = $row['openid'];
+            $total = $row['total'];
+        }
+    }
+
 ?>
 
 <section class="aui-flexView">
@@ -78,7 +97,7 @@ $subscribe_time = $utils->convert_time_nyr($subscribe_time);
                         <h2>
                             总资产(元) 
                         </h2>
-                        <h3>1200.99</h3>
+                        <h3><?php echo "$total";?></h3>
                     </div>
                    
                 </div>
