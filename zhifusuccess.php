@@ -45,7 +45,7 @@
 <div class="cgzf_info">
 <div class="wenx_xx">
   <div class="mz">校园马帮平台</div>
-  <div class="wxzf_price">￥<?php $_GET['fee']?></div>
+  <div class="wxzf_price">￥<?php echo $_GET['fee'];?></div>
 </div>
 
 <div class="spxx_shop">
@@ -91,7 +91,7 @@ document.getElementById('time').innerText=getNowFormatDate()
 
 </script>
 <div class="success_btn_wrap">
-  <a class="success_btn">完成跳转到首页</a>
+  <a class="success_btn" href="index.php">完成</a>
 </div>
 <div class="wzxfcgde_tb"><img src="images/cg_07.jpg" ></div>
 </body>
