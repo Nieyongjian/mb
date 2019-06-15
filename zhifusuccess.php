@@ -28,15 +28,6 @@
 </style>
 </head>
 <body >
-<div class="header">
-  <div class="all_w" style="position:relative; z-index:1;">
-    <div class="ttwenz" style=" text-align:center; width:100%;">
-      <h4>支付详情</h4>
-      <h5>微信安全支付</h5>
-    </div>
-    <a href="index.html" class="fh_but"></a> </div>
-</div>
-
 <div class="zfcg_box ">
 <div class="all_w">
 <img src="images/cg_03.jpg" > 支付成功 </div>
