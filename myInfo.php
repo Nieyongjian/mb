@@ -12,6 +12,18 @@
     <link href="css/list.css" rel="stylesheet">
     <link href="bs/bootstrap.css" rel="stylesheet">
     <link href="css/my.css" rel="stylesheet" type="text/css"/>
+    <style type="text/css">
+    a:link,
+    a:hover,
+    a:active,
+    a:visited{
+      text-decoration: none;
+      color: #000;
+    }
+    a:{
+  -webkit-tap-heighlight-color: transparent;
+}
+    </style>
     <script src="js/jquery.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
@@ -67,7 +79,7 @@ $subscribe_time = $utils->convert_time_nyr($subscribe_time);
                         </h2>
                         <h3>1200.99</h3>
                     </div>
-                    <div class="aui-flex-box-fr"></div>
+                   
                 </div>
                 
                 <div class="divHeight"></div>
@@ -78,7 +90,7 @@ $subscribe_time = $utils->convert_time_nyr($subscribe_time);
                         </div>
                         <div class="aui-flex-box-bd">发布订单
                         </div>
-                        
+                        <div class="aui-flex-box-fr"></div> 
                     </a>
                     <div class="divHeight"></div>
                     
