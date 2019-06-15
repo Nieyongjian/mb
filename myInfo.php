@@ -13,6 +13,7 @@
     <link href="bs/bootstrap.css" rel="stylesheet">
     <link href="css/my.css" rel="stylesheet" type="text/css"/>
     <style type="text/css">
+    body:{margin-bottom: 3.2rem}
     a:link,
     a:hover,
     a:active,
@@ -22,7 +23,7 @@
     }
     a:{
   -webkit-tap-heighlight-color: transparent;
-}
+    }
     </style>
     <script src="js/jquery.js"></script>
     <script src="js/popper.min.js"></script>
