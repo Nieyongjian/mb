@@ -59,6 +59,9 @@
     session_start();
     $headimgurl = $_SESSION['headimgurl'];
     $nickname = $_SESSION['nickname'];
+    echo $headimgurl;
+    echo $nickname;
+    exit;
     $subscribe_time = $_SESSION['subscribe_time'];
     $subscribe_time = $utils->convert_time_nyr($subscribe_time);
     if(isset($_SESSION['openid'])){
