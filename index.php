@@ -154,7 +154,7 @@ if($code){
             echo "no session";
                 echo $headimgurl;
                 echo $nickname;
-                exit;
+                // exit;
     }else{
         if((($_SESSION['mbtime']+7000)-time())<0){
             //通过user_info方式获取用户信息
@@ -193,9 +193,10 @@ if($code){
             echo "session  过期";
                             echo $headimgurl;
                 echo $nickname;
-                exit;
+                // exit;
 
-        // }else{
+        }
+        //else{
         //      // 使用code换取openid
         //     $output = $utils->get_openid($code);
         //     $data = json_decode($output,true);
