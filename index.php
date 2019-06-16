@@ -194,6 +194,27 @@ if($code){
                 echo $nickname;
                 exit;
 
+        }else{
+             // 使用code换取openid
+            $output = $utils->get_openid($code);
+            $data = json_decode($output,true);
+            $openid = $data['openid'];
+            //通过access_token和openid来拉取用户信息
+            $output = $utils->get_userinfo_by_openid($access_token,$openid);
+            $data = json_decode($output,true);
+            $nickname = $data['nickname'];
+            $headimgurl = $data['headimgurl'];
+            $subscribe_time = $data['subscribe_time'];
+            $time = time();
+            $_SESSION['openid'] = $openid;
+            $_SESSION['mbtime'] = $time;
+            $_SESSION['nickname'] = $nickname;
+            $_SESSION['headimgurl'] = $headimgurl;
+            $_SESSION['subscribe_time'] = $subscribe_time;
+            echo "chaoshi";
+                echo $headimgurl;
+                echo $nickname;
+                exit;
         }
     }
 }
