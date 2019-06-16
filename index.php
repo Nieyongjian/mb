@@ -115,27 +115,27 @@ if(isset($_GET['code'])){
 $access_token = token();
 //微信端通过以snsapi_base为scope发起的网页授权获取到code，然后用code换取openid
 if($code){
-    $mbtime = $_SESSION['mbtime'];
-    if(!isset($mbtime)){
-        //通过user_info方式获取用户信息
-            // $output = $utils->get_access_token($code);
-            // $data = json_decode($output,true);
-            // $access_token = $data['access_token'];
-            // $openid = $data['openid'];
-            // //将用户票据和openid存储到session中
-            // $_SESSION['access_token'] = $access_token;
-            // $_SESSION['openid'] = $openid;
-            // //根据用户票据和openid得到用户的信息
-            // $output = $utils->get_userinfo($access_token,$openid);
-            // $arr = json_decode($output,true);
-            // $src = $arr['headimgurl'];
-            // $nickname = $arr['nickname'];
-            // $time = time();
-            // //将头像地址、数据存储时间、以及昵称存入到session中
-            // $_SESSION['src'] = $src;
-            // $_SESSION['time'] = $time;
-            // $_SESSION['nickname'] = $nickname;
-            // 使用code换取openid
+    // $mbtime = $_SESSION['mbtime'];
+    // if(!isset($mbtime)){
+    //     //通过user_info方式获取用户信息
+    //         // $output = $utils->get_access_token($code);
+    //         // $data = json_decode($output,true);
+    //         // $access_token = $data['access_token'];
+    //         // $openid = $data['openid'];
+    //         // //将用户票据和openid存储到session中
+    //         // $_SESSION['access_token'] = $access_token;
+    //         // $_SESSION['openid'] = $openid;
+    //         // //根据用户票据和openid得到用户的信息
+    //         // $output = $utils->get_userinfo($access_token,$openid);
+    //         // $arr = json_decode($output,true);
+    //         // $src = $arr['headimgurl'];
+    //         // $nickname = $arr['nickname'];
+    //         // $time = time();
+    //         // //将头像地址、数据存储时间、以及昵称存入到session中
+    //         // $_SESSION['src'] = $src;
+    //         // $_SESSION['time'] = $time;
+    //         // $_SESSION['nickname'] = $nickname;
+    //         // 使用code换取openid
             $output = $utils->get_openid($code);
             $data = json_decode($output,true);
             $openid = $data['openid'];
@@ -151,51 +151,51 @@ if($code){
             $_SESSION['nickname'] = $nickname;
             $_SESSION['headimgurl'] = $headimgurl;
             $_SESSION['subscribe_time'] = $subscribe_time;
-            echo "no session";
-                echo $headimgurl;
-                echo $nickname;
-                // exit;
-    }else{
-        if((($_SESSION['mbtime']+7000)-time())<0){
-            //通过user_info方式获取用户信息
-            // $output = $utils->get_access_token($code);
-            // $data = json_decode($output,true);
-            // $access_token = $data['access_token'];
-            // $openid = $data['openid'];
-            // //将用户票据和openid存储到session中
-            // $_SESSION['access_token'] = $access_token;
-            // $_SESSION['openid'] = $openid;
-            // //根据用户票据和openid得到用户的信息
-            // $output = $utils->get_userinfo($access_token,$openid);
-            // $arr = json_decode($output,true);
-            // $src = $arr['headimgurl'];
-            // $nickname = $arr['nickname'];
-            // $time = time();
-            // //将头像地址、数据存储时间、以及昵称存入到session中
-            // $_SESSION['src'] = $src;
-            // $_SESSION['time'] = $time;
-            // $_SESSION['nickname'] = $nickname;
-            // $output = $utils->get_openid($code);
-            $output = $utils->get_openid($code);
-            $data = json_decode($output,true);
-            $openid = $data['openid'];
-            $output = $utils->get_userinfo_by_openid($access_token,$openid);
-            $data = json_decode($output,true);
-            $nickname = $data['nickname'];
-            $headimgurl = $data['headimgurl'];
-            $subscribe_time = $data['subscribe_time'];
-            $time = time();
-            $_SESSION['openid'] = $openid;
-            $_SESSION['mbtime'] = $time;
-            $_SESSION['nickname'] = $nickname;
-            $_SESSION['headimgurl'] = $headimgurl;
-            $_SESSION['subscribe_time'] = $subscribe_time;
-            echo "session  过期";
-                            echo $headimgurl;
-                echo $nickname;
-                // exit;
+    //         echo "no session";
+    //             echo $headimgurl;
+    //             echo $nickname;
+    //             // exit;
+    // }else{
+    //     if((($_SESSION['mbtime']+7000)-time())<0){
+    //         //通过user_info方式获取用户信息
+    //         // $output = $utils->get_access_token($code);
+    //         // $data = json_decode($output,true);
+    //         // $access_token = $data['access_token'];
+    //         // $openid = $data['openid'];
+    //         // //将用户票据和openid存储到session中
+    //         // $_SESSION['access_token'] = $access_token;
+    //         // $_SESSION['openid'] = $openid;
+    //         // //根据用户票据和openid得到用户的信息
+    //         // $output = $utils->get_userinfo($access_token,$openid);
+    //         // $arr = json_decode($output,true);
+    //         // $src = $arr['headimgurl'];
+    //         // $nickname = $arr['nickname'];
+    //         // $time = time();
+    //         // //将头像地址、数据存储时间、以及昵称存入到session中
+    //         // $_SESSION['src'] = $src;
+    //         // $_SESSION['time'] = $time;
+    //         // $_SESSION['nickname'] = $nickname;
+    //         // $output = $utils->get_openid($code);
+    //         $output = $utils->get_openid($code);
+    //         $data = json_decode($output,true);
+    //         $openid = $data['openid'];
+    //         $output = $utils->get_userinfo_by_openid($access_token,$openid);
+    //         $data = json_decode($output,true);
+    //         $nickname = $data['nickname'];
+    //         $headimgurl = $data['headimgurl'];
+    //         $subscribe_time = $data['subscribe_time'];
+    //         $time = time();
+    //         $_SESSION['openid'] = $openid;
+    //         $_SESSION['mbtime'] = $time;
+    //         $_SESSION['nickname'] = $nickname;
+    //         $_SESSION['headimgurl'] = $headimgurl;
+    //         $_SESSION['subscribe_time'] = $subscribe_time;
+    //         echo "session  过期";
+    //                         echo $headimgurl;
+    //             echo $nickname;
+    //             // exit;
 
-        }
+    //     }
         //else{
         //      // 使用code换取openid
         //     $output = $utils->get_openid($code);
@@ -218,7 +218,7 @@ if($code){
         //         echo $nickname;
         //         exit;
         // }
-    }
+    // }
 }
 
 //获取数据连接
