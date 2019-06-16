@@ -84,8 +84,8 @@ if(isset($openid) && isset($oid)){
 				//构造模板消息内容
 				$data = array(
 					'touser'=>$touser,
-					'template_id'=>'iNHCkBt-CYjFK8KVcygG_-34u3OHUWdbOIo9MqIYaRo',
-					'url'=>'',
+					'template_id'=>'cFVUsZFqnsyM3v1pRwP3F4gssXHZXfJWkrAfBoTVYzQ',
+					'url'=>'http://cc.k8ff.cn/myInfo.php',
 					'data'=>array(
 						'express' => array('value' => $express),
 						'name' => array('value' => $sname),
