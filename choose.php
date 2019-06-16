@@ -64,7 +64,7 @@ if(isset($openid) && isset($oid)){
 				</div>";
 				//获取接单人相关信息，用于模板消息
 				foreach ($result as $row) {
-					$sname = $row['sname'];
+					$sname = $row['name'];
 					$sno = $row['sno'];
 				}
 				//通过订单号获取订单发送者的信息
@@ -72,6 +72,7 @@ if(isset($openid) && isset($oid)){
 				$result = $dbconn->query($sql_query);
 				foreach ($result as $row) {
 					$touser = $row['openid'];
+					$express=$row['express'];
 				}
 				//通过快递编号获取快递公司名称
 				$sql = "select * from `express` where eid = $express";
@@ -85,7 +86,7 @@ if(isset($openid) && isset($oid)){
 				$data = array(
 					'touser'=>$touser,
 					'template_id'=>'cFVUsZFqnsyM3v1pRwP3F4gssXHZXfJWkrAfBoTVYzQ',
-					'url'=>'http://cc.k8ff.cn/myInfo.php',
+					'url'=>'http://cc.k8ff.cn/mb/myInfo.php',
 					'data'=>array(
 						'express' => array('value' => $express),
 						'name' => array('value' => $sname),
