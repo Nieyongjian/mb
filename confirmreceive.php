@@ -51,9 +51,10 @@ $sql_query = "select * from `orders` where oid = $oid and gottime is not null";
 $result = $dbconn->query($sql_query);
 foreach ($result as $row) {
     $fee =  $row['fee'];
+    $sopenid = $row['sopenid'];
 }
 if(isset($fee)){
-    $sql_query = "INSERT INTO `bill` VALUES('".$openid."','".$fee."','".time()."')";
+    $sql_query = "INSERT INTO `bill` VALUES('".$sopenid."','".$fee."','".time()."')";
     if($dbconn->exec($sql_query)){
         echo "<!-- 模态框 -->
 				<div class='modal fade show' style='display: block;top:30%'>
