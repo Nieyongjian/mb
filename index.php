@@ -107,11 +107,11 @@
 include 'utils.php';
 include 'weixin/token.php';
 // include 'clearsession.php';
+ session_start();
 $utils = new Utils;
 if(isset($_GET['code'])){
     $code =  $_GET['code'];
 }
-session_start();
 $access_token = token();
 //微信端通过以snsapi_base为scope发起的网页授权获取到code，然后用code换取openid
 if($code){
@@ -150,6 +150,10 @@ if($code){
             $_SESSION['nickname'] = $nickname;
             $_SESSION['headimgurl'] = $headimgurl;
             $_SESSION['subscribe_time'] = $subscribe_time;
+            echo "no session";
+                echo $headimgurl;
+                echo $nickname;
+                exit;
     }else{
         if((($_SESSION['mbtime']+7000)-time())<0){
             //通过user_info方式获取用户信息
@@ -185,6 +189,11 @@ if($code){
             $_SESSION['nickname'] = $nickname;
             $_SESSION['headimgurl'] = $headimgurl;
             $_SESSION['subscribe_time'] = $subscribe_time;
+            echo "you session";
+                            echo $headimgurl;
+                echo $nickname;
+                exit;
+
         }
     }
 }
